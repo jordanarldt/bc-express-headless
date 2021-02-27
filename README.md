@@ -61,3 +61,5 @@ LIVE EXAMPLE:
 8. Add blog page
 
 9. Add the "SHOP" menu overlay, as well as the "MENU" overlay.
+
+10. Account signup functionality
