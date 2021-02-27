@@ -1,7 +1,5 @@
 # Headless BigCommerce app with Node.js Express Handlebars
 
-LIVE EXAMPLE: https://bc-express-headless.herokuapp.com/
-
 *****
 - Headless BigCommerce Store with Node.js Express Handlebars
 -   created by 
