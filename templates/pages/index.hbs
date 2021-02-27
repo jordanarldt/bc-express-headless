@@ -1,0 +1,70 @@
+<section class="homepage-section1">
+    <div class="container">
+        <div class="splitsection">
+            <div class="splitsection-col s25 center">
+                <h2>{{context.pages.homepage.section1.title}}</h2>
+            </div>
+            <div class="splitsection-col s75">
+                <p>{{context.pages.homepage.section1.body}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="homepage-section2">
+    <div class="homepage-section2-container">
+        <h2>{{context.pages.homepage.section2.header}}</h2>
+        <div class="homepage-section2-img-container">
+            <div class="homepage-section2-img i1"></div>
+            <div class="homepage-section2-img i2"></div>
+            <div class="homepage-section2-img i3"></div>
+        </div>
+        <div class="container">
+            <div class="splitsection">
+                <div class="splitsection-col s50 right rightdiv">
+                    <h3>{{context.pages.homepage.section2.title1}}</h3>
+                </div>
+                <div class="splitsection-col s50">
+                    <p>{{context.pages.homepage.section2.body1}}</p>
+                </div>
+            </div>      
+            <div class="splitsection">
+                <div class="splitsection-col s50 right rightdiv">
+                    <h3><span>{{context.pages.homepage.section2.title2}}</span></h3>
+                </div>
+                <div class="splitsection-col s50">
+                    <p>{{context.pages.homepage.section2.body2}}</p>
+                </div>
+            </div>      
+        </div>
+    </div>
+</section>
+<section class="homepage-section3">
+    <div class="homepage-section3-container">
+        <h2>{{context.pages.homepage.section3.header}}</h2>
+        <div class="container">
+            <div class="splitsection">
+                <div class="splitsection-col s10 right" id="section3-img1-col">
+                    <div class="homepage-section3-img i1">
+                    </div>
+                </div>
+                <div class="splitsection-col s50 center">
+                    <p>{{context.pages.homepage.section3.body}}</p>
+                </div>
+                <div class="splitsection-col s10 left" id="section3-img2-col">
+                    <div class="homepage-section3-img i2">
+                    </div>                    
+                </div>
+            </div>          
+        </div>
+    </div>
+</section>
+{{#if blogData}}
+<section class="homepage-section-blog">
+    <div class="homepage-section-blog-container">
+        <h2>{{context.pages.homepage.section4.header}}</h2>
+        <div class="container">
+            {{> common/recent-posts}}
+        </div>
+    </div>
+</section>
+{{/if}}

@@ -1,0 +1,51 @@
+<div class="page">
+    <div class="container">
+        <div class="product-view">
+            <section class="product-view-image">
+                <div class="product-view-image-container">
+                    {{#if product.defaultimg}}
+                    <img src={{ product.defaultimg.url320wide }}>
+                    {{else}}
+                    <img src="/img/ProductDefault.png">
+                    {{/if}}
+                </div>
+            </section>
+            <div class="product-view-details-panel">
+                <section class="product-view-details">
+                    <div class="product-view-details-container">
+                        <h1>{{ product.name }}</h1>
+                        <div class="product-view-sku">SKU: <span id="sku">{{#if product.sku}}{{product.sku}}{{else}}-{{/if}}</span></div>
+                        {{#if (ifCond product.priceRange.min "=" product.priceRange.max)}}
+                            <span class="price">{{currency product.price}}</span>
+                        {{else}}
+                            <span class="price">{{currency product.priceRange.min}} - {{currency product.priceRange.max}}</span>
+                        {{/if}}
+                    </div>
+                </section>
+                {{> product-options}}
+            </div>
+            {{#if (ifOr2 product.description product.details)}}
+            <section class="product-view-info-panel">
+                <ul class="product-tabs">
+                    {{#if product.description}}<li class="tab is-active" data-target="description-tab"><a href="javascript:void(0)">Description</a></li>{{/if}}{{#if product.details}}<li class="tab" data-target="details-tab"><a href="javascript:void(0)">Details</a></li>{{/if}}
+                </ul>
+                {{#if product.description}}
+                    <div class="product-tab-content description-tab active">
+                        <p>{{product.description}}</p>
+                    </div>
+                {{/if}}
+                {{#if product.details}}
+                    <div class="product-tab-content details-tab">
+                        {{#each product.details}}
+                            <div>{{this.name}}: {{this.value}}</div>
+                        {{/each}}
+                        {{#each product.custom_fields}}
+                            <div>{{this.name}}: {{this.value}}</div>
+                        {{/each}}
+                    </div>
+                {{/if}}
+            </section>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+{
+    "slogan": "The new form of fashion",
+    "top-banner": "/img/marble_banner.png",
+    "pages": {
+        "homepage": {
+            "section1": {
+                "title": "Welcome!",
+                "body": "This is an example of a headless BigCommerce store created with Node.js Express and Handlebars. This uses the GraphQL API to pull the store information and display it on the page. All of the Javascript, HTML, and CSS styling was done by myself from scratch to exercise my skills in full stack development. If you are using this as a template, please see the Read Me."
+            },
+            "section2": {
+                "header": "Live in style",
+                "title1": "Look good, feel good.",
+                "body1": "Our wide selection of extremely high quality men's fashionwear allows our customers to truly find their style, and portray themselves as who they want to be.",
+                "title2": "Stand out.",
+                "body2": "The brands we sell are some of the rarest in the world. You won't find clothes of this quality anywhere else."
+            },
+            "section3": {
+                "header": "Crafted just for you.",
+                "body": "When you order our branded products, each selection is tailored specifically for you. We have our master tailors working around the clock to craft the finest clothing in the world for every individual order."
+            },
+            "section4": {
+                "header": "Recent Updates"
+            }
+        },
+        "loginpage": {
+            "new_account": {
+                "message": "Create a customer account with us and you can receive several benefits for your shopping experience!",
+                "bullet1": "Special deals and discounts",
+                "bullet2": "Faster checkout experience",
+                "bullet3": "Access your order history",
+                "bullet4": "Track your orders easily"
+            }
+        }
+    },
+    "footer": {
+        "copyright": "© 2021 Jordan Arldt. All rights reserved",
+        "links": [
+            {
+                "url": "/about",
+                "text": "About Us"
+            },
+            {
+                "url": "/shipping-returns",
+                "text": "Shipping & Returns"
+            },
+            {
+                "url": "/blog",
+                "text": "Blog"
+            }
+        ],
+        "bottom-links": [
+            {
+                "url": "/about/privacy",
+                "text": "Privacy Policy"
+            },
+            {
+                "url": "/about/terms",
+                "text": "Terms"
+            },
+            {
+                "url": "#",
+                "text": "Sitemap"
+            }
+        ]
+    }
+}

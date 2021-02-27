@@ -1,0 +1,48 @@
+<div class="page">
+    <div class="container center">
+        <div class="login">
+            <h1 class="page-heading">Sign In</h1>
+            {{#if failure}}
+                <div class="alert alert-danger visible" id="alert"><span></span>The email and password that you entered was incorrect. Please try again.</div>
+            {{/if}}
+            {{#if logout}}
+                <div class="alert alert-success"><span></span>You have been successfully logged out.</div>
+            {{/if}}
+            <div class="panels">
+                <div class="login-form">
+                    <form id="loginForm" action="/api/login" method="post" enctype="application/x-www-form-urlencoded">
+                        <label for="inputEmail" class="form-label">Email address:</label>
+                        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="" required autofocus>
+                        <label for="inputPassword" class="form-label">Password:</label>
+                        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="" required>
+                        <div style="text-align: right;">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <div class="col text-center">
+                            <button class="btn btn-lg btn-primary shadow-none login-button" id="login-button" type="submit">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="new-user">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h2>New Customer?</h2>
+                        </div>
+                        <div class="panel-body">
+                            <p>{{context.pages.loginpage.new_account.message}}</p>
+                            <ul>
+                                <li>{{context.pages.loginpage.new_account.bullet1}}</li>
+                                <li>{{context.pages.loginpage.new_account.bullet2}}</li>
+                                <li>{{context.pages.loginpage.new_account.bullet3}}</li>
+                                <li>{{context.pages.loginpage.new_account.bullet4}}</li>
+                            </ul>
+                            <div class="col text-center">
+                                <a href="/register"><button class="btn btn-lg btn-primary shadow-none register-button">Create Account</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

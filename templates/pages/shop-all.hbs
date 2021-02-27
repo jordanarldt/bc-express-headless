@@ -1,0 +1,10 @@
+<div class="page">
+    <div class="container">
+        <p>Here's our entire catalog. Fetched with GraphQL.</p>
+        <ul class="product-grid">
+            {{#each products}}
+            {{> product-card}}
+            {{/each}}
+        </ul>
+    </div>
+</div>

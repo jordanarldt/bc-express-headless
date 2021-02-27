@@ -1,0 +1,93 @@
+<div class="page">
+    <div class="container">
+        <main class="cart-page">
+            {{#if cart}}
+                <h1 class="page-heading">Your Cart (<span id="cart-item-count">{{cart.total_items}}</span> <span id="cart-item-count-items">{{#if (ifCond cart.total_items '>' 1)}}items{{else}}item{{/if}}</span>)</h1>
+                <div class="cart-content">
+                    <table class="cart" data-cart-id="{{cart.id}}">
+                        <thead class="cart-header">
+                            <tr>
+                                <th class="cart-header-col"></th>
+                                <th class="cart-header-col">Item</th>
+                                <th class="cart-header-col">Price</th>
+                                <th class="cart-header-col cart-header-qty">Quantity</th>
+                                <th class="cart-header-col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="cart-list">
+                            {{#each cart.items}}
+                                {{#if this.gift_cert}}
+                                <tr class="cart-item" data-item-id="{{this.id}}" data-gift-cert>
+                                    <td class="cart-item-col  cart-item-thumbnail center">Gift Cert</td>
+                                    <td class="cart-item-col cart-item-title">
+                                        <h2 class="cart-item-name">{{currency this.amount}} Gift Certificate</h2>
+                                        <dl class="cart-item-details-list">
+                                            <dt class="cart-detail-key">Sender:</dt>
+                                            <dd class="cart-detail-value">{{this.sender.name}} ({{this.sender.email}})</dd>
+                                            <dt class="cart-detail-key">Recipient:</dt>
+                                            <dd class="cart-detail-value">{{this.recipient.name}} ({{this.recipient.email}})</dd>      
+                                            <dt class="cart-detail-key">Theme:</dt>
+                                            <dd class="cart-detail-value">{{this.theme}}</dd>                                     
+                                        </dl>
+                                    </td>
+                                    <td class="cart-item-col"><span id="line-item-price">{{currency this.amount}}</span></td>
+                                    <td class="cart-item-col cart-item-qty">{{this.quantity}}</td>
+                                    <td class="cart-item-col"><span id="line-item-total">{{currency this.total_cost}}</span><span class="cart-item-remove"></span></td>
+                                </tr>
+                                {{else}}
+                                    <tr class="cart-item" data-item-id="{{this.id}}" {{#if this.custom_item}}data-custom-item="{{this.sku}}"{{else}}data-product-id="{{this.product_id}}"{{/if}}>
+                                        <td class="cart-item-col cart-item-thumbnail"><img src="{{this.image_url}}"></td>
+                                        <td class="cart-item-col cart-item-title">
+                                            <h2 class="cart-item-name">{{#if this.product_path}}<a href="{{this.product_path}}">{{/if}}{{this.name}}{{#if this.product_path}}</a>{{/if}}</h2>
+                                            {{#if this.sku}}
+                                            <dl class="cart-item-details-list">
+                                                <dt class="cart-detail-key">SKU:</dt>
+                                                <dd class="cart-detail-value"><span id="line-item-sku">{{this.sku}}</span></dd>
+                                            </dl>
+                                            {{/if}}
+                                        </td>
+                                        <td class="cart-item-col"><span id="line-item-price">{{currency this.list_price}}</span></td>
+                                        <td class="cart-item-col cart-item-qty"><div id="qtyselector"><button type="button" class="btn btn-dark form-btn-qty shadow-none small" data-op="dec">-</button><input class="form-qty-increment" name="qty" type="tel" min="0" max="1000" pattern="[0-9]*" value="{{this.quantity}}"><button type="button" class="btn btn-dark form-btn-qty shadow-none small" data-op="inc">+</button></div></td>
+                                        <td class="cart-item-col"><span id="line-item-total">{{currency this.extended_list_price}}</span><span class="cart-item-remove"></span></td>
+                                    </tr>
+                                {{/if}}
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-content-totals">
+                    <ul class="cart-totals">
+                        <li class="cart-total">
+                            <div class="cart-total-label"><strong>Subtotal:</strong></div>
+                            <div class="cart-total-value"><span id="cart-subtotal-value">{{currency cart.base_amount}}</span></div>
+                        </li>
+                        <li class="cart-total">
+                            <div class="cart-total-label"><strong>Discount:</strong></div>
+                            <div class="cart-total-value"><span id="cart-discount-value">-{{currency cart.discount_amount}}</span></div>
+                        </li>
+                        <li class="cart-total">
+                            <div class="cart-total-label"><strong>Tax:</strong></div>
+                            <div class="cart-total-value"><span id="cart-tax-value">{{currency cart.tax_amount}}</span></div>
+                        </li>
+                        <li class="cart-total grand-total">
+                            <div class="cart-total-label"><strong>Grand Total:</strong></div>
+                            <div class="cart-total-value grand-total"><span id="cart-grandtotal-value">{{currency cart.cart_amount}}</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cart-content-checkout">
+                    <a href="/checkout">
+                        <button class="btn btn-lg btn-primary shadow-none generic">Proceed to Checkout</button>
+                    </a>
+                </div>
+            {{else}}
+                <h1 class="page-heading">Your cart is empty!</h1>
+                <div class="empty-cart-content">
+                    <p>Check out some of our most popular products</p>
+                    {{> best-selling-products}}
+                </div>
+            {{/if}}
+        </main>
+    </div>
+</div>
+

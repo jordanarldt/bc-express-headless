@@ -1,0 +1,38 @@
+<footer class="footer">
+    <section class="footer-info">
+        <div class="footercol s25">
+            <h3 class="footercol-title">Navigate</h3>
+            <ul>
+                {{#each context.footer.links}}
+                <li><a href="{{this.url}}">{{this.text}}</a></li>
+                {{/each}}                
+            </ul>
+        </div>
+        <div class="footercol s25">
+            <h3 class="footercol-title">Categories</h3>
+            <ul>
+                {{#each storeData.categories}}
+                <li><a href="/category{{this.path}}">{{this.name}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="footercol s25">
+            <h3 class="footercol-title">Contact</h3>
+            {{#if storeData.address}}<address>{{{storeData.address}}}</address>{{/if}}
+            {{#if storeData.contact.phone}}<p>{{storeData.contact.phone}}</p>{{/if}}
+            {{#if storeData.contact.email}}<p>{{storeData.contact.email}}</p>{{/if}}
+        </div>       
+        <div class="footercol s50">
+            <h3 class="footercol-title">Subscribe to our Newsletter</h3>
+            <p>Get the latest updates on new products and upcoming sales</p>
+        </div>      
+    </section>
+    <section class="footer-bottom">
+        <div class="footer-legal">{{ context.footer.copyright }}</div>
+        {{#if context.footer.bottom-links}}
+        <div class="footer-company">
+            {{#each context.footer.bottom-links}}<a href="{{this.url}}">{{this.text}}</a>{{#unless @last}}<span>·</span>{{/unless}}{{/each}}
+        </div>
+        {{/if}}
+    </setion>
+</footer>

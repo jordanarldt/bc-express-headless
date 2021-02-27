@@ -1,0 +1,39 @@
+<div class="navBar-container" id="navBarShop">
+    <nav class="navBar">
+        <ul class="navMenu">
+            <li class="navMenu-item"><a class="navMenu-action" href="/shop/">Shop All</a></li>
+            <li class="navMenu-item dropdown"><a class="navMenu-action" href="#">Categories</a>
+                <ul class="dropDown-menu">
+                    {{#each storeData.categories}}
+                    <li class="dropDown-item {{#if this.children}}children{{/if}}"><a class="dropDown-action" href="/category{{this.path}}"><span>{{this.name}}</span>{{#if this.children}}<svg class="subMenu-arrow" width="8" height="8" style="color: white;" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"></svg>{{/if}}</a>
+                    
+                    {{#if this.children}}
+                    <ul class="subMenu">
+                        {{#each this.children}}
+                        <li class="dropDown-item"><a class="dropDown-action" href="/category{{this.path}}"><span>{{this.name}}</span></a></li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}</li>
+                    {{/each}}   
+                </ul>
+            </li>
+            <li class="navMenu-item dropdown"><a class="navMenu-action" href="#">Blog</a></li>
+            {{!--{{#each storeData.categories}}
+            <li class="navMenu-item {{#if this.children}}dropdown{{/if}}"><a class="navMenu-action" href="{{this.path}}">{{this.name}}</a>
+                <ul class="dropDown-menu">
+                    {{#each this.children}}
+                    <li class="dropDown-item {{#if this.children}}children{{/if}}"><a class="dropDown-action" href="{{this.path}}">{{this.name}}{{#if this.children}}<svg class="subMenu-arrow" width="8" height="8" style="color: white;" viewBox="0 0 24 24"><path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"></svg>{{/if}}</a>
+                    {{#if this.children}}
+                    <ul class="subMenu">
+                        {{#each this.children}}
+                        <li class="dropDown-item"><a class="dropDown-action" href="{{this.path}}">{{this.name}}</a></li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}</li>
+                    {{/each}}   
+                </ul>            
+            </li>
+            {{/each}}--}}
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,40 @@
+<div class="splitsection">
+    {{#each blogData}}
+    <div class="splitsection-col s25">
+        <div class="blog-post">
+            <div class="blog-post-container">
+                <div class="blog-post-title">{{this.title}}</div>
+                <div class="blog-post-content"><p>{{{trunc this.summary 125}}} <a href="/blog/posts/{{this.id}}" style="white-space: nowrap;">read more</a></p></div>
+                <div class="blog-post-date">{{date this.published_date_iso8601}}</div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <!--<div class="splitsection-col s25">
+        <div class="blog-post">
+            <div class="blog-post-container">
+                <div class="blog-post-title">Post Title</div>
+                <div class="blog-post-content"><p>Truncated text here test test test. Lorem ipsum something this text is just demo text to demonstrate a truncated blog post... <a href="#">read more</a></p></div>
+                <div class="blog-post-date">1-07-2021 @ 9:54pm cst</div>
+            </div>
+        </div>
+    </div>
+    <div class="splitsection-col s25">
+        <div class="blog-post">
+            <div class="blog-post-container">
+                <div class="blog-post-title">Post Title</div>
+                <div class="blog-post-content"><p>Truncated text here test test test. Lorem ipsum something this text is just demo text to demonstrate a truncated blog post... <a href="#">read more</a></p></div>
+                <div class="blog-post-date">1-07-2021 @ 9:54pm cst</div>
+            </div>
+        </div>
+    </div>
+    <div class="splitsection-col s25" id="blog-post-3">
+        <div class="blog-post">
+            <div class="blog-post-container">
+                <div class="blog-post-title">Post Title</div>
+                <div class="blog-post-content"><p>Truncated text here test test test. Lorem ipsum something this text is just demo text to demonstrate a truncated blog post... <a href="#">read more</a></p></div>
+                <div class="blog-post-date">1-07-2021 @ 9:54pm cst</div>
+            </div>
+        </div>
+    </div>-->
+</div>

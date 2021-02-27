@@ -1,0 +1,21 @@
+<li class="product">
+    <div class="product-card-image">
+        {{#if this.node.defaultImage.url}}
+        <img src={{this.node.defaultImage.url}}>
+        {{else}}
+        <img src="/img/ProductDefault.png" width="100%">
+        {{/if}}
+    </div>
+    <div class="product-card-details">
+        <div class="product-card-title">
+            <a href="/product{{this.node.path}}">{{this.node.name}}</a>
+        </div>
+        <div class="product-card-price">
+            {{#if (ifCond this.node.prices.priceRange.min.value "=" this.node.prices.priceRange.max.value)}}
+                <strong>{{currency this.node.prices.price.value}}</strong>            
+            {{else}}
+                <strong>{{currency this.node.prices.priceRange.min.value}} - {{currency this.node.prices.priceRange.max.value}}</strong>
+            {{/if}}
+        </div>
+    </div>
+</li>

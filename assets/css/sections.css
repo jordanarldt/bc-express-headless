@@ -1,0 +1,275 @@
+/* Sections CSS */
+
+.splitsection {
+    display: table;
+    width: 100%;
+    /* font-family: 'Cormorant Garamond', serif; */
+}
+
+.splitsection > .center > h3 {
+    text-align: center;
+}
+
+.splitsection > .right > h3 {
+    text-align: right;
+}
+
+.splitsection > .right {
+    text-align: right;
+}
+
+.splitsection > .rightdiv {
+    border-right: 1px solid white;
+}
+
+.splitsection-col {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 16px;
+}
+
+.splitsection-col.center p {
+    text-align: center;
+}
+
+.splitsection-col.s10 {
+    width: 10%;
+}
+
+.splitsection-col.s25 {
+    width: 25%;
+}
+
+.splitsection-col.s50 {
+    width: 50%;
+}
+
+.splitsection-col.s75 {
+    width: 75%;
+}
+
+.homepage-section1 {
+    /*background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), url('/img/marble_banner_larger.jpg');
+    background-position-y: 0px;
+    background-attachment: fixed; */
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.homepage-section1 h2 {
+    font-weight: bold;
+    font-size: 3vw;
+}
+@media (min-width: 1200px) {
+    .homepage-section1 h2 {
+        font-size: 36px;
+    }    
+}
+@media (max-width: 920px) {
+    .homepage-section1 h2 {
+        font-size: 28px;
+    }    
+}
+
+.homepage-section1 p {
+    /* font-family: 'EB Garamond', serif; */
+    font-size: 1.3vw;
+}
+@media (min-width: 1450px) {
+    .homepage-section1 p {
+        font-size: 18px;
+    }    
+}
+@media (max-width: 1240px) {
+    .homepage-section1 p {
+        font-size: 16px;
+    }    
+}
+
+.homepage-section2 {
+    background-color: #000000;
+    color: white;
+}
+
+.homepage-section3 {
+    background-color:#89B1D9;
+    color: white;
+}
+
+.homepage-section2-container, .homepage-section3-container, .homepage-section-blog-container {
+    padding: 20px 0px 0px 0px;
+}
+
+.homepage-section2 h2, .homepage-section3 h2, .homepage-section-blog h2  {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.5vw;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 1320px) {
+    .homepage-section2 h2, .homepage-section3 h2, .homepage-section-blog h2 {
+        font-size: 46px;
+    }    
+}
+@media (max-width: 915px) {
+    .homepage-section2 h2, .homepage-section3 h2, .homepage-section-blog h2 {
+        font-size: 32px;
+    }    
+}
+
+
+.homepage-section2-img-container {
+    text-align: center;
+    font-size: 0px;
+}
+
+.homepage-section2-img {
+    background-position: center;
+    background-size: cover;
+    /*width: 500px;
+    height: 350px;*/
+    width: 30vw;
+    height: 25vw;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    min-width: 300px;
+    min-height: 165px;
+}
+
+.homepage-section2-img.i1 {
+    background-image: url("/img/live_in_style1.png");
+}
+
+.homepage-section2-img.i2 {
+    background-image: url("/img/live_in_style2.png");
+    margin-bottom: 30px;
+}
+
+.homepage-section2-img.i3 {
+    background-image: url("/img/live_in_style3.png");
+}
+
+.homepage-section2 h3, .homepage-section3 h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5vw;
+    margin-bottom: 16px;
+}
+
+.homepage-section2 span {
+    background-color: white;
+    color: black;
+    padding: 4px;
+}
+
+@media (min-width: 1440px) {
+    .homepage-section2 h3, .homepage-section3 h3 {
+        font-size: 36px;
+    }    
+}
+@media (max-width: 970px) {
+    .homepage-section2 h3, .homepage-section3 h3 {
+        font-size: 24px;
+    }    
+}
+
+.homepage-section2 p, .homepage-section3 p {
+    font-size: 1.5vw;
+}
+
+@media (min-width: 1450px) {
+    .homepage-section2 p, .homepage-section3 p {
+        font-size: 22px;
+    }    
+}
+@media (max-width: 1070px) {
+    .homepage-section2 p, .homepage-section3 p {
+        font-size: 16px;
+    }    
+}
+
+.homepage-section3-img {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10vw;
+    height: 10vw;
+}
+.homepage-section3-img.i1 {
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' style='fill: white' width='100' height='100' viewBox='0 0 24 24'><path d='M6.914 2.741l15.557 15.556-4.243 4.243-15.556-15.557 4.242-4.242zm-.707-.707l-2.033-2.034-4.174 4.243 1.965 2.034 4.242-4.243zm12.821 21.119l4.972.847-.918-4.901-4.054 4.054zm-4.567-15.694l.389-.388.707.707.707-.707-.707-.707.707-.707.707.707.708-.708-.707-.706 2.121-2.121 2.121 2.121-4.631 4.631 1.393 1.393 6.024-6.024-4.908-4.95-6.045 6.045 1.414 1.414zm-4.949 9.193l-4.562 4.561-2.121-2.121.707-.708.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.707.707-.707.707.707.707-.707-.707-.706.319-.319-1.415-1.415-5.975 5.976 4.95 4.908 5.955-5.955-1.393-1.393zm9.934-11.349c.195-.195.195-.512 0-.707s-.512-.195-.707 0-.195.512 0 .707.512.196.707 0z'/></svg>");
+}
+
+.homepage-section3-img.i2 {
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='24' height='24' style='fill: white' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M18 24h-12v-12l-3 10.357-3-.773 4-17.584 3.782-2.002c-.417 1.998.72 4.432 1.516 6.158.804-.703 1.301-1.157 2.7-2.252 1.394 1.093 1.822 1.485 2.7 2.251.83-1.796 1.935-4.186 1.518-6.158l3.784 2.003 4 17.584-3 .731-2.882-10.315-.118 12zm-6-3c.276 0 .5.224.5.5s-.224.5-.5.5-.5-.224-.5-.5.224-.5.5-.5zm0-3c.276 0 .5.224.5.5s-.224.5-.5.5-.5-.224-.5-.5.224-.5.5-.5zm0-3.001c.276 0 .5.224.5.5s-.224.5-.5.5-.5-.224-.5-.5.224-.5.5-.5zm0-2.998c.276 0 .5.224.5.5s-.224.5-.5.5-.5-.224-.5-.5.224-.5.5-.5zm0-3.001c.276 0 .5.224.5.5s-.224.5-.5.5-.5-.224-.5-.5.224-.5.5-.5zm-2.425-2.15c-2.099-4.546-1.049-6.858 2.422-6.846 2.888 0 4.823 1.646 2.422 6.846-.877-.766-2.162-1.76-2.422-1.959-.029-.023-2.389 1.93-2.422 1.959zm2.438-2.226c1.396-.419 3.992-3.633-.013-3.624-4.009.009-1.39 3.228-.003 3.629l.016-.005z'/></svg>");    
+}
+
+@media (min-width: 1000px) {
+    .homepage-section3-img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.homepage-section-blog-container {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.homepage-section-blog-container > .container {
+    border-top: 1px solid #022A52;
+}
+
+.blog-post {
+    position: relative;
+    border-radius: 4px;
+    min-width: 260px;
+}
+
+@media (max-width: 1005px) and (min-width: 600px) {
+    #blog-post-3 {
+        display: none;
+    }
+}
+
+.blog-post-container {
+    padding: 8px;
+}
+
+.blog-post-title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.blog-post-link {
+    text-align: right;
+}
+
+.blog-post-date {
+    font-size: 12px;
+}
+
+.blog-post-overlay {
+    border-radius: 4px;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    background-color: #89b1d900;
+    width: 100%;
+    height: 100%;
+    color: black;
+    transition: color 1s, background-color 1s, visibility 1s;
+}
+
+.blog-post:hover .blog-post-overlay {
+    visibility: visible;
+    color: white;
+    background-color: #89b1d9b6;
+}

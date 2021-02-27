@@ -1,0 +1,46 @@
+<section class="product-view-options-section">
+    <div class="product-view-options">
+        <form class="form" id="add_product_form" method="post" action="/api/cart" data-cart-product-add="">
+            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="product_id" value="{{product.id}}">
+            <input type="hidden" name="variant_id" value="{{#if product.variantId}}{{product.variantId}}{{else}}{{product.baseVariantId}}{{/if}}">
+            {{#if optionsData}}    
+
+                {{#each optionsData.options}}
+
+                    {{#if (eqStr this.type 'MultipleChoiceOption')}} 
+                        <div class="form-section" {{#if this.required}}{{#unless this.isModifier}}required-option{{/unless}}{{/if}}>
+                        <label class="form-label">{{this.name}} {{#if this.required}}<span class="required-text">(Required)</span>{{/if}}</label>                    
+                        {{#each this.choices}}         
+                            <div class="form-radio-choice">
+                                <input type="radio" id="attribute_{{../this.id}}-{{lookup ../this.optionIds @index}}" data-choice-parent="{{../this.id}}" data-choice="{{lookup ../this.optionIds @index}}" name="attribute[{{../this.id}}]" {{#if ../this.required}}required{{/if}}>
+                                <label for="attribute_{{../this.id}}-{{lookup ../this.optionIds @index}}">{{this}}</label>
+                            </div>
+                        {{/each}}
+                        </div>                        
+                    {{else}}
+                        {{#if (eqStr this.type 'CheckboxOption')}}
+                            <div class="form-section" {{#if this.required}}{{#unless this.isModifier}}required-option{{/unless}}{{/if}}>
+                            <input type="checkbox" class="form-checkbox" id="attribute_{{this.id}}" data-choice-parent="{{this.id}}" name="attribute[{{this.id}}]" {{#if this.required}}required{{/if}}><label class="form-label" for="attribute[{{this.id}}]">- {{this.name}} {{#if this.required}}<span class="required-text">(Required)</span>{{/if}}</label>
+                            
+                            {{#each this.choices}}
+                                {{this}}
+                            {{/each}}
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                {{/each}}
+            {{/if}}
+
+            <div class="form-qty-section">
+                <label for="qty">Quantity</label>
+                <div class="form-qty">
+                    <div id="qtyselector"><button type="button" class="btn btn-dark form-btn-qty shadow-none" data-op="dec">-</button><input class="form-qty-increment" name="qty" type="tel" min="0" max="1000" pattern="[0-9]*" value="1"><button type="button" class="btn btn-dark form-btn-qty shadow-none" data-op="inc">+</button></div>
+                </div>
+            </div>
+            <div class="form-add-to-cart-button">
+                <button type="submit" class="btn">Add to Cart</button>
+            </div>
+        </form>
+    </div>
+</section>

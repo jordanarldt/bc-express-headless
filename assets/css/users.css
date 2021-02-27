@@ -1,0 +1,102 @@
+/* User related page styling. This includes account, login, signup, etc. */
+
+.login {
+    align-items: center;
+    width: 100%;
+    font-size: 0px;
+    display: table;
+}
+
+.login-button {
+    background-color: #022A52;
+    border: none;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color:#2463a1;
+}
+
+.login-form {
+    font-size: 14px;
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    padding: 32px;
+    height: 300px;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.login-form .col.text-center {
+    padding: 16px;
+}
+
+.checkbox {
+    padding: 8px;
+}
+
+.new-user {
+    background-color: #89B1D9;
+    color: #F5F3F5;
+    font-size: 14px;
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    vertical-align: top;
+    min-width: 300px;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+.new-user .panel .panel-header {
+    padding: 1.5rem 2rem 0;
+}
+
+.new-user .panel .panel-header h2 {
+    font-size: 22px;
+}
+
+.new-user .panel .panel-body {
+    padding: 0.5rem 2rem 1rem;
+}
+
+.register-button {
+    background-color: #022A52;
+    border: none;
+    font-size: 16px;
+}
+
+.login .btn {
+    box-shadow: inset 0px -4px 0px rgb(50, 100, 145), 0px 4px 8px rgba(0,0,0,0.3) !important;
+}
+
+.login .btn:hover {
+    box-shadow: inset 0px -4px 0px rgb(60, 128, 187), 0px 4px 8px rgba(0,0,0,0.3) !important;
+}
+
+.login .btn:active {
+    box-shadow: inset 0px -2px 0px rgb(60, 128, 187), 0px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+.register-button:hover {
+    background-color:#2463a1;
+}
+
+.form-label {
+    margin-bottom: 0;
+    margin-top: 8px;
+    padding-left: 8px;
+}
+
+@media (max-width: 800px) {
+    .login-form, .new-user {
+        width: 100%;
+    }
+}
+
+/* Account page */
+.account-page h1 {
+    font-size: 28px;
+}
