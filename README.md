@@ -1,7 +1,5 @@
 # Headless BigCommerce app with Node.js Express Handlebars
-
-Headless BigCommerce Store with Node.js Express Handlebars
-  created by  Jordan Arldt
+   created by  Jordan Arldt
 *****
 
 This is intended to be used as a detailed example of how a headless integration with BigCommerce should work with Node.js Express. I mainly created this just to practice full stack development and learn more about creating a headless integration with the BigCommerce platform. This also provides some insight on how the BigCommerce Stencil platform actually works with handlebars context and templates.
