@@ -13,7 +13,7 @@ This is intended to be used as a detailed example of how a headless integration 
 This app is intended to be fully functional aside from some missing pages that would be added if it was a real store.
 If you want to use this headless integration as a base with your own BigCommerce store, you will need to follow the setup and then customize it to your liking.
 
-LIVE EXAMPLE: 
+LIVE EXAMPLE: https://bc-express-headless.herokuapp.com/
 
 ----------------------
 ---- INSTRUCTIONS ----
