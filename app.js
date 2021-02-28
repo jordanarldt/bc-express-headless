@@ -187,18 +187,13 @@ app.engine("hbs", handlebars.engine);
 app.set("views", "templates");
 app.set("view engine", "hbs");
 
+// Middleware to force HTTPS redirect
 app.set("trust proxy", true);
-app.use(function(req, res, next) { 
-    console.log("Http to Https middleware");
-    console.log("Host: " + req.get("Host"));
-    console.log("Url: " + req.url);
-    
+app.use(function(req, res, next) {     
     if(req.get("X-Forwarded-Proto") != "https") {
-        console.log(`Redirect to https://${req.get("Host")}${req.url}`);
         if(req.get("Host") != "127.0.0.1:8080" && req.get("Host") != "localhost:8080") {
             res.redirect(`https://${req.get("Host")}${req.url}`);
         } else {
-            console.log("Not redirecting, on localhost");
             next();
         }
     } else {
