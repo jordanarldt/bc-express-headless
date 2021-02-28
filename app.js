@@ -202,6 +202,7 @@ app.use(function(req, res, next) {
         console.log("Connection secure, or coming from localhost");
         next();
     }
+    next();
 });
 app.use(api); // Middleware to handle all internal API posts
 app.use(userController.authenticateSession); // Middleware for user/customer authentication
