@@ -197,9 +197,8 @@ app.use(function(req, res, next) {
     console.log(`https://${req.get("Host")}${req.url}`);
     if(req.get("Host") != "localhost:8080" && !req.secure) {
         res.redirect(`https://${req.get("Host")}${req.url}`);
-    } else {
-        next();
     }
+    next();
 });
 app.use(api); // Middleware to handle all internal API posts
 app.use(userController.authenticateSession); // Middleware for user/customer authentication
