@@ -4,6 +4,7 @@ const path = require("path");
 //const hbs = require("handlebars");
 const exphbs = require("express-handlebars");
 const cookieParser = require("cookie-parser");
+const secure = require("express-force-https");
 
 const app = express();
 
@@ -191,18 +192,8 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(secure);
 app.use(cookieParser("headless-signature"));
-app.use("/", function(req, res, next) {
-    console.log(`Http to Https middleware. Current protocol: ${req.get('X-Forwarded-Protocol') || "http"}`);
-
-    if(req.get("Host") != "localhost:8080" && req.get('X-Forwarded-Protocol') != "https") {
-        console.log(`Forwarding ${req.get('X-Forwarded-Protocol') || ""}${req.get("Host")}${req.url} to https://${req.get("Host")}${req.url}`);
-        return res.redirect(`https://${req.get("Host")}${req.url}`);
-    } else {
-        console.log("Connection secure, or coming from localhost");
-        return next();
-    }
-});
 app.use(api); // Middleware to handle all internal API posts
 app.use(userController.authenticateSession); // Middleware for user/customer authentication
 app.use(storeData); // Refresh store data on every page load
