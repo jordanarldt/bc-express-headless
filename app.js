@@ -192,7 +192,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser("headless-signature"));
-app.use(function(req, res, next) {
+app.use("/", function(req, res, next) {
     console.log(`Http to Https middleware. Current protocol: ${req.get('X-Forwarded-Protocol') || "http"}`);
 
     if(req.get("Host") != "localhost:8080" && req.get('X-Forwarded-Protocol') != "https") {
