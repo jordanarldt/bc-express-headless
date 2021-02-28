@@ -9,6 +9,8 @@ If you want to use this headless integration as a base with your own BigCommerce
 
 ## LIVE EXAMPLE: https://jabctools.com/
 
+###### NOTE: This currently uses my personal API credentials and access token. These will be removed soon - I'm only leaving them on here since I'm sharing this for the PSE project.
+
 ----------------------
 ---- INSTRUCTIONS ----
 ----------------------
