@@ -192,6 +192,15 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser("headless-signature"));
+
+// Force HTTPS
+app.use(function(req, res, next) {
+  if ((req.get('X-Forwarded-Proto') !== 'https')) {
+    res.redirect('https://' + req.get('Host') + req.url);
+  } else
+    next();
+});
+
 app.use(api); // Middleware to handle all internal API posts
 app.use(userController.authenticateSession); // Middleware for user/customer authentication
 app.use(storeData); // Refresh store data on every page load
