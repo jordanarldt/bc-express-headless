@@ -151,7 +151,7 @@ function ifOr2(arg1, arg2) {
 }
 
 function truncateString(str, len) {
-    console.log(str);
+    //console.log(str);
     if(str.length > len && str.length > 0) {
         var new_str = str + " ";
         new_str = str.substr (0, len);
@@ -192,15 +192,13 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser("headless-signature"));
-
-// Force HTTPS
 app.use(function(req, res, next) {
-  if ((req.get('X-Forwarded-Proto') !== 'https')) {
-    res.redirect('https://' + req.get('Host') + req.url);
-  } else
-    next();
+    if(req.get("Host") != "localhost:8080" && !req.secure) {
+        res.redirect(`https://${req.get("Host")}${req.url}`);
+    } else {
+        next();
+    }
 });
-
 app.use(api); // Middleware to handle all internal API posts
 app.use(userController.authenticateSession); // Middleware for user/customer authentication
 app.use(storeData); // Refresh store data on every page load
