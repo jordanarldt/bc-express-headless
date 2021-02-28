@@ -193,6 +193,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser("headless-signature"));
 app.use(function(req, res, next) {
+    console.log("HTTP to HTTPS Middleware");
+    console.log(`https://${req.get("Host")}${req.url}`);
     if(req.get("Host") != "localhost:8080" && !req.secure) {
         res.redirect(`https://${req.get("Host")}${req.url}`);
     } else {
