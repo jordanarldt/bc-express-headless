@@ -360,6 +360,7 @@ $(document).ready(function() {
         
         if(quantity == 0) {
             $(this).val(1);
+            $(this).change();
             createDeleteItemModal(cartId, itemId, quantity);
         } else {
             ajaxCartItemUpdate(cartId, itemId, itemData, quantity);
