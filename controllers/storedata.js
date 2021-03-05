@@ -698,7 +698,7 @@ function getBlogPosts(limit) {
   if(limit) {
     uri = `/blog/posts?limit=${limit}`;
   } else {
-    url = "/blog/posts";
+    uri = "/blog/posts";
   }
 
   bigC.apiVersion = "v2";
